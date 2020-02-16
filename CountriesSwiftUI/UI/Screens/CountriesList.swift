@@ -151,6 +151,12 @@ extension CountriesList {
     }
 }
 
+extension CountriesList.Routing: CustomStringConvertible {
+    var description: String {
+        return "CountriesList.Routing, countryDetails: \(countryDetails ?? "nil")"
+    }
+}
+
 // MARK: - State Updates
 
 private extension CountriesList {

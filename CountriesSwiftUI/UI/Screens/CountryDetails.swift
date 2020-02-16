@@ -196,6 +196,12 @@ extension CountryDetails {
     }
 }
 
+extension CountryDetails.Routing: CustomStringConvertible {
+    var description: String {
+        return "CountryDetails.Routing, detailsSheet: \(detailsSheet)"
+    }
+}
+
 // MARK: - State Updates
 
 private extension CountryDetails {

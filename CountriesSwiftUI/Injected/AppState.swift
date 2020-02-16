@@ -11,7 +11,12 @@ import Combine
 
 struct AppState: Equatable {
     var userData = UserData()
-    var routing = ViewRouting()
+    var routing = ViewRouting() {
+        didSet {
+            print("AppState, routing: \n\(routing)")
+        }
+    }
+
     var system = System()
 }
 
@@ -25,6 +30,13 @@ extension AppState {
     struct ViewRouting: Equatable {
         var countriesList = CountriesList.Routing()
         var countryDetails = CountryDetails.Routing()
+        var modalDetails = ModalDetailsView.Routing()
+    }
+}
+
+extension AppState.ViewRouting: CustomStringConvertible {
+    var description: String {
+        return "AppState.ViewRouting:\n  countriesList: \(countriesList)\n  countryDetails: \(countryDetails)\n  modalDetails: \(modalDetails)\n"
     }
 }
 
